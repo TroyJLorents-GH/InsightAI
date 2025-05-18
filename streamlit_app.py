@@ -1,12 +1,17 @@
 import streamlit as st
-import requests
-from file_uploader import extract_text
+import openai
+import os
 import sqlite3
+from dotenv import load_dotenv
+from file_uploader import extract_text
+
+# Load environment variable
+load_dotenv()
+openai.api_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
 
 st.set_page_config(page_title="Insight AI", page_icon="🧠")
 st.title("Insight AI 🧠")
 
-API_URL = "http://127.0.0.1:5000/chat"
 DB_PATH = "db/chatbot.db"
 
 if "messages" not in st.session_state:
@@ -28,6 +33,17 @@ def get_keywords_for_prompt(prompt):
     if row and row[0]:
         return " · ".join(row[0].split(", "))
     return "Untitled"
+
+# Function to query OpenAI chat model
+def ask_openai(prompt, model="gpt-4"):
+    try:
+        response = openai.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        return f"Error from OpenAI: {e}"
 
 # Sidebar: chat history + new chat
 st.sidebar.title("📃 Chat History")
@@ -85,12 +101,7 @@ if prompt is not None:
 
         # Step 1: Request a summary from the assistant
         summary_prompt = f"Summarize or describe this document briefly:\n\n{doc_text}"
-        try:
-            response = requests.post(API_URL, json={"message": summary_prompt})
-            response.raise_for_status()
-            summary_response = response.json().get("response", "[No summary returned]")
-        except Exception as e:
-            summary_response = f"Error summarizing file: {e}"
+        summary_response = ask_openai(summary_prompt)
 
         st.session_state.messages.append({"role": "assistant", "content": summary_response})
         with st.chat_message("assistant"):
@@ -113,12 +124,7 @@ if prompt is not None:
         with st.chat_message("user"):
             st.markdown(user_input)
 
-        try:
-            response = requests.post(API_URL, json={"message": full_prompt})
-            response.raise_for_status()
-            ai_response = response.json().get("response", "[No response from server]")
-        except Exception as e:
-            ai_response = f"Error contacting backend: {e}"
+        ai_response = ask_openai(full_prompt)
 
         st.session_state.messages.append({"role": "assistant", "content": ai_response})
         with st.chat_message("assistant"):
