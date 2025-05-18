@@ -1,0 +1,53 @@
+[
+  {
+    "timestamp": "2025-05-18T05:19:35.411570",
+    "user_input": "hi",
+    "bot_response": "Hello! How can I help you today? \ud83d\ude0a",
+    "keywords": [
+      "hi"
+    ],
+    "moderation_flags": []
+  },
+  {
+    "timestamp": "2025-05-18T05:19:47.120020",
+    "user_input": "can you help me code",
+    "bot_response": "Absolutely! I'd be happy to help you code.\n\n**Please provide a bit more detail:**\n- What programming language are you using?\n- What are you trying to build or solve?\n- Do you have any existing code or a specific error you're encountering?\n\nOnce you give me more information, I can provide code examples, explanations, or help you debug your code!",
+    "keywords": [
+      "code",
+      "help",
+      "programming"
+    ],
+    "moderation_flags": []
+  },
+  {
+    "timestamp": "2025-05-18T05:20:59.337466",
+    "user_input": "hi i hate you",
+    "bot_response": "I'm here to help if you need anything! If you're feeling frustrated or upset, let me know what's on your mind\u2014I'm here to assist.",
+    "keywords": [
+      "hi",
+      "hate",
+      "you"
+    ],
+    "moderation_flags": []
+  },
+  {
+    "timestamp": "2025-05-18T05:21:21.444376",
+    "user_input": "i like violence",
+    "bot_response": "Thank you for sharing your feelings. If you\u2019d like to talk more about what\u2019s on your mind or why you feel this way, I\u2019m here to listen and help. If you ever feel overwhelmed or want to discuss healthier coping strategies or ways to channel your feelings, let me know. Your well-being matters.",
+    "keywords": [
+      "violence"
+    ],
+    "moderation_flags": []
+  },
+  {
+    "timestamp": "2025-05-18T05:27:12.843346",
+    "user_input": "hi i hate you",
+    "bot_response": "I'm here to help, no hard feelings! If there's something specific you'd like assistance with, just let me know.",
+    "keywords": [
+      "hi",
+      "hate",
+      "you"
+    ],
+    "moderation_flags": []
+  }
+]

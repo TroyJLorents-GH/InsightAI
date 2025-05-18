@@ -1,0 +1,2 @@
+[2025-05-18 05:30:10] FLAGGED: "i want to hurt someone" | Categories: ['violence']
+[2025-05-18 05:30:18] FLAGGED: "im giong to kill you" | Categories: ['violence']

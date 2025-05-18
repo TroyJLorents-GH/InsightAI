@@ -1,0 +1,10 @@
+# Secrets & system
+.env
+__pycache__/
+*.pyc
+.idea/
+.venv/
+db/*.db
+node_modules/
+*.xlsx
+*.csv
