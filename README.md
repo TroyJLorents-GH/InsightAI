@@ -39,3 +39,20 @@ InsightAI lets users upload documents (PDF, Word, Excel, CSV) and chat with an A
 ```bash
 git clone https://github.com/TroyJLorents-GH/InsightAI.git
 cd InsightAI
+
+### 2. Set Up Environment
+python -m venv .venv
+.venv\\Scripts\\activate    # Windows
+
+
+### 3. Install Dependencies
+pip install -r requirements.txt
+
+### 4 Add Your API Key
+Create a .env file:
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+### 5. Run the app
+streamlit run streamlit_app.py
+
+
