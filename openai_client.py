@@ -10,7 +10,7 @@ class OpenAIClient:
         self.api_key = api_key or os.getenv("OPENAI_API_KEY")
         self.client = openai.Client(api_key=self.api_key)
 
-    def chat_completion(self, prompt, model="gpt-4.1"):
+    def chat_completion(self, prompt, model="o3-2025-04-16"):
         response = self.client.chat.completions.create(
             model=model,
             messages=[{"role": "user", "content": prompt}]
