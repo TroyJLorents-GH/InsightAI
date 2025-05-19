@@ -35,7 +35,7 @@ def get_keywords_for_prompt(prompt):
     return "Untitled"
 
 # Function to query OpenAI chat model
-def ask_openai(prompt, model="o3"):
+def ask_openai(prompt, model="gpt-4o"):
     try:
         response = openai.chat.completions.create(
             model=model,
