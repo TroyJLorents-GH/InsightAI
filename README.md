@@ -1,5 +1,5 @@
 # InsightAI 🧠
-An intelligent document-aware chatbot built with OpenAI, Streamlit, and Python.
+An intelligent document-aware chatbot built with OpenAI, Streamlit, and Python for demo project.
 
 ## 🚀 Overview
 InsightAI lets users upload documents (PDF, Word, Excel, CSV) and chat with an AI assistant that can:
@@ -39,37 +39,31 @@ InsightAI lets users upload documents (PDF, Word, Excel, CSV) and chat with an A
 ```bash
 git clone https://github.com/TroyJLorents-GH/InsightAI.git
 cd InsightAI
----
+```
 
-```bash
 ### 2. Set Up Environment
+```bash
 python -m venv .venv
 .venv\\Scripts\\activate    # Windows
+```
 
----
-
-```bash
 ### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
----
-
-```bash
 ### 4 Add Your API Key
-Create a .env file:
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-
----
-
+- Create a .env file:
 ```bash
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
 ### 5. Run the app
+```bash
 streamlit run streamlit_app.py
+```
 
----
-License
-MIT License — feel free to fork and build upon it
 
----
 Created by
 Troy Lorents | @TroyJLorents-GH
 
